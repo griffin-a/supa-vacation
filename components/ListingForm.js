@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import { toast } from 'react-hot-toast';
@@ -38,6 +39,7 @@ const ListingForm = ({
       setImageUrl(data?.url);
       toast.success('Successfully uploaded', { id: toastId });
     } catch (e) {
+      console.log(e);
       toast.error('Unable to upload', { id: toastId });
       setImageUrl('');
     } finally {

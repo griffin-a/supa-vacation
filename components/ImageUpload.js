@@ -34,6 +34,7 @@ const ImageUpload = ({
             await onChangePicture(reader.result);
           }
         } catch (err) {
+          console.log(err);
           toast.error('Unable to update image');
         } finally {
           setUpdatingPicture(false);
